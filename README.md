@@ -28,3 +28,23 @@ Log in button. The same checks run in the browser and on the Python server.
   password.
 
 ## Project structure
+server.py # Python server + server-side validation
+static/index.html # the page
+static/app.js # client-side validation
+static/style.css # styling
+
+
+## Run
+
+Python 3 is enough. No extra packages.
+
+```bash
+python3 server.py
+```
+
+Open http://127.0.0.1:8765
+
+## Demo account
+
+- Email: `student@example.com`
+- Password: `password123`
