@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  font-family: Roboto, "Segoe UI", sans-serif;
+}
+
+.topbar {
+  height: 64px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #546e7a;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.top-links {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+.stage {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.card {
+  width: min(400px, 100%);
+  padding: 16px 16px 8px;
+  background: #303030;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+  margin: 8px 8px 18px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.field {
+  position: relative;
+  margin: 8px 8px 16px;
+}
+
+.field input {
+  width: 100%;
+  height: 56px;
+  padding: 16px 40px 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  font: 16px Roboto, "Segoe UI", sans-serif;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #69f0ae;
+  border-width: 2px;
+}
+
+.field label {
+  position: absolute;
+  left: 12px;
+  top: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.12s ease;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 8px;
+  padding: 0 4px;
+  background: #303030;
+  color: #69f0ae;
+  font-size: 12px;
+}
+
+.eye {
+  position: absolute;
+  right: 8px;
+  top: 16px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.eye svg,
+.login svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.side-link {
+  margin: 0 8px 12px;
+}
+
+.side-link a {
+  color: #69f0ae;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.side-link.center {
+  margin: 8px 0 16px;
+  text-align: center;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 8px auto 16px;
+  padding: 8px 22px;
+  border: 0;
+  border-radius: 24px;
+  background: #78909c;
+  color: #fff;
+  font: 14px Roboto, "Segoe UI", sans-serif;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+}
+
+.login:hover {
+  background: #90a4ae;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 0 auto 8px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+
+#message {
+  min-height: 1.3em;
+  margin: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+#message.error {
+  color: #ff8a80;
+}
+
+#message.ok {
+  color: #69f0ae;
+}
+
+#message.info {
+  color: rgba(255, 255, 255, 0.7);
+}

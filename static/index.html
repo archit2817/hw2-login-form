@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">OWASP Juice Shop</span>
+    <nav class="top-links" aria-label="Shop">
+      <span>Search</span>
+      <span>Account</span>
+      <span>Your Basket</span>
+      <span>EN</span>
+    </nav>
+  </header>
+
+  <main class="stage">
+    <section class="card">
+      <h1>Login</h1>
+      <form id="login-form" action="/login" method="post" novalidate>
+        <div class="field">
+          <input id="email" name="email" type="text" autocomplete="username" spellcheck="false" placeholder=" ">
+          <label for="email">Email *</label>
+        </div>
+
+        <div class="field">
+          <input id="password" name="password" type="password" autocomplete="current-password" placeholder=" ">
+          <label for="password">Password *</label>
+          <button id="toggle-password" class="eye" type="button" aria-label="Show password">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5C7 5 2.7 8.1 1 12c1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+            </svg>
+          </button>
+        </div>
+
+        <p class="side-link"><a href="#forgot">Forgot your password?</a></p>
+
+        <button class="login" type="submit">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 17v-2h4v-2h-4v-2l-3 3 3 3zm9-12H5a2 2 0 0 0-2 2v4h2V7h14v10H5v-2H3v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"/>
+          </svg>
+          Log in
+        </button>
+
+        <label class="remember">
+          <input id="remember" type="checkbox">
+          Remember me
+        </label>
+
+        <p id="message" role="status"></p>
+        <p class="side-link center"><a href="#register">Not yet a customer?</a></p>
+      </form>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
