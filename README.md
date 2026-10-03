@@ -1,15 +1,30 @@
 # Login form
 
-A small login page for a web security homework. It copies the idea of the OWASP Juice Shop login screen: an email field, a password field, and a log in button. The browser and the Python server both reject an empty form, an email with no `@`, and a password shorter than 8 characters.
+A small login page for a web security homework. It copies the idea of the
+OWASP Juice Shop login screen: an email field, a password field, and a
+Log in button. The same checks run in the browser and on the Python server.
 
-The demo account is `student@example.com` / `password123`. The server stores that password as a PBKDF2-HMAC-SHA256 hash with a salt. It never writes the typed email or password into the HTML it sends back.
+## What it does
 
-## Run
+- Email and password fields with a Log in button.
+- Rejects an empty email or password.
+- Requires an `@` in the email.
+- Requires a password of at least 8 characters.
+- Runs these three checks in the browser (`static/app.js`) and again on the
+  server (`server.py`), so they still apply if the browser is bypassed.
 
-Python 3 is enough. No extra packages.
+## Security
 
-```bash
-python3 server.py
-```
+- The server builds no SQL and runs no database query, so there is nothing
+  to inject. The email is compared as a plain string and the password as a
+  hash.
+- The demo password is stored as a PBKDF2-HMAC-SHA256 hash with a salt.
+  Comparison uses `hmac.compare_digest`.
+- Messages are written with `textContent`, not `innerHTML`, so a typed tag
+  shows as text and does not run (XSS defense).
+- Every response sends `Content-Security-Policy: default-src 'self'` and
+  `X-Content-Type-Options: nosniff`.
+- The reply is one fixed sentence and never repeats the typed email or
+  password.
 
-Open http://127.0.0.1:8765
+## Project structure
