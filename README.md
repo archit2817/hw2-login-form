@@ -28,10 +28,13 @@ Log in button. The same checks run in the browser and on the Python server.
   password.
 
 ## Project structure
-server.py # Python server + server-side validation
-static/index.html # the page
-static/app.js # client-side validation
-static/style.css # styling
+
+```text
+server.py          # Python server + server-side validation
+static/index.html  # the page
+static/app.js      # client-side validation
+static/style.css   # styling
+```
 
 
 ## Run
